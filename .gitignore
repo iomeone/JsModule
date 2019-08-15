@@ -3,3 +3,6 @@
 bin/
 temp/
 lib/
+
+*.user
+src/plugin/JuceDll/Builds/
