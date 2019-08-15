@@ -47,8 +47,8 @@
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\temp\$(Configuration)\$(ProjectName)\Dynamic Library\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">JuceDll</TargetName>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Platform)\$(Configuration)\Dynamic Library\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\Dynamic Library\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\bin\$(Configuration)\plugin\Dynamic Library\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\temp\$(Configuration)\$(ProjectName)\Dynamic Library\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">JuceDll</TargetName>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
   </PropertyGroup>
@@ -94,6 +94,10 @@
       <OutputFile>$(IntDir)\JuceDll.bsc</OutputFile>
     </Bscmake>
     <Lib/>
+    <PostBuildEvent>
+      <Command>copy &quot;$(TargetPath)&quot; &quot;$(SolutionDir)\bin\$(Configuration)\plugin&quot;
+copy &quot;$(TargetDir)*&quot; &quot;$(SolutionDir)\bin\$(Configuration)\plugin&quot;</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Midl>
@@ -138,6 +142,10 @@
       <OutputFile>$(IntDir)\JuceDll.bsc</OutputFile>
     </Bscmake>
     <Lib/>
+    <PostBuildEvent>
+      <Command>copy &quot;$(TargetPath)&quot; &quot;$(SolutionDir)\bin\$(Configuration)\plugin&quot;
+copy &quot;$(TargetDir)*&quot; &quot;$(SolutionDir)\bin\$(Configuration)\plugin&quot;</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\Main.cpp"/>

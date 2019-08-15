@@ -14,8 +14,11 @@
     <VS2013 targetFolder="Builds/VisualStudio2013">
       <CONFIGURATIONS>
         <CONFIGURATION isDebug="1" name="Debug" winArchitecture="Win32" binaryPath="$(SolutionDir)\bin\$(Configuration)\plugin"
-                       intermediatesPath="$(SolutionDir)\temp\$(Configuration)\$(ProjectName)"/>
-        <CONFIGURATION isDebug="0" name="Release" winArchitecture="Win32"/>
+                       intermediatesPath="$(SolutionDir)\temp\$(Configuration)\$(ProjectName)"
+                       postbuildCommand="copy &quot;$(TargetPath)&quot; &quot;$(SolutionDir)\bin\$(Configuration)\plugin&quot;&#10;copy &quot;$(TargetDir)*&quot; &quot;$(SolutionDir)\bin\$(Configuration)\plugin&quot;"/>
+        <CONFIGURATION isDebug="0" name="Release" winArchitecture="Win32" binaryPath="$(SolutionDir)\bin\$(Configuration)\plugin"
+                       intermediatesPath="$(SolutionDir)\temp\$(Configuration)\$(ProjectName)"
+                       postbuildCommand="copy &quot;$(TargetPath)&quot; &quot;$(SolutionDir)\bin\$(Configuration)\plugin&quot;&#10;copy &quot;$(TargetDir)*&quot; &quot;$(SolutionDir)\bin\$(Configuration)\plugin&quot;"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_opengl"/>
