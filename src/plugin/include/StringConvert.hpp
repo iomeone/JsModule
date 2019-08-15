@@ -1,10 +1,10 @@
 #pragma once
 #include <v8pp/config.hpp>
-
 #include <string>
+#pragma warning (disable : 4996)
 using namespace std;
 
-
+const int BUFLEN = 10240;
 
 void Convert(const char* strIn, char* strOut, int sourceCodepage, int targetCodepage)
 {
@@ -19,14 +19,14 @@ void Convert(const char* strIn, char* strOut, int sourceCodepage, int targetCode
 	pTargetData = new BYTE[targetLen + 1];
 	memset(pTargetData, 0, targetLen + 1);
 	WideCharToMultiByte(targetCodepage, 0, (LPWSTR)pUnicode, -1, (char *)pTargetData, targetLen, NULL, NULL);
-	strcpy(strOut, (char*)pTargetData);
+	strncpy(strOut, (char*)pTargetData, BUFLEN);
 	delete pUnicode;
 	delete pTargetData;
 }
 
 std::string MbToUtf8(string strIn)
 {
-	char chOut2[10240] = { 0 };
+	char chOut2[BUFLEN] = { 0 };
 	Convert(strIn.c_str(), chOut2, CP_ACP, CP_UTF8);
 	string strOut = chOut2;
 	return strOut;

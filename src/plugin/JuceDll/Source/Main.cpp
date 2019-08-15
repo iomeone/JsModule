@@ -11,6 +11,9 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "MainComponent.h"
 
+#include <v8pp/module.hpp>
+#include <v8pp/config.hpp>
+
 //==============================================================================
 class JuceAppApplication  : public JUCEApplication
 {
@@ -104,3 +107,9 @@ private:
 //==============================================================================
 // This macro generates the main() routine that launches the app.
 START_JUCE_APPLICATION (JuceAppApplication)
+
+
+
+
+
+
