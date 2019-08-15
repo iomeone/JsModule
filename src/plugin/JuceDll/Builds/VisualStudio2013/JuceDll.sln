@@ -1,0 +1,20 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2013
+
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JuceDll - Dynamic Library", "JuceDll_DynamicLibrary.vcxproj", "{3FD612CB-56C2-9F26-ECC4-600CEE454531}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3FD612CB-56C2-9F26-ECC4-600CEE454531}.Debug|x64.ActiveCfg = Debug|x64
+		{3FD612CB-56C2-9F26-ECC4-600CEE454531}.Debug|x64.Build.0 = Debug|x64
+		{3FD612CB-56C2-9F26-ECC4-600CEE454531}.Release|x64.ActiveCfg = Release|x64
+		{3FD612CB-56C2-9F26-ECC4-600CEE454531}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
